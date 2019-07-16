@@ -11,5 +11,5 @@ WORKDIR gopro-utils
 
 RUN export GOPATH="/gopro-utils"
 RUN go get github.com/JuanIrache/gopro-utils/telemetry
-RUB go get github.com/paulmach/go.geo
+RUN go get github.com/paulmach/go.geo
 
