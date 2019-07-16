@@ -13,10 +13,10 @@ docker build  github.com/trolleway/gopro2mapillary --no-cache --tag gopro2mapill
 #create volume
 docker volume create g2m_data
 
-#mount with bind, for debug and filezilla
-docker gopro2mapillary -it  \
+#mount real folder
+docker run -it  \
   --name g2m \
-  --mount type=volume,source=g2m_data,target=/gopro2mapillary/g2m_data \
+  --mount type=volume,source=$(pwd)/g2m_data,target=/g2m_data \
   --env-file config.env \
   gopro2mapillary
   
