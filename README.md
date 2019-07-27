@@ -21,3 +21,14 @@ docker run -it  \
   gopro2mapillary
   
 ```
+
+# More simpler way
+
+
+```
+# parameter r should be calced as source fps / rate. 10x become 30fps/10=3
+ffmpeg -r 3 -i j:\GOPRO\20190726\GH011703.MP4   -y GH011703.MP4
+
+
+c:\mav\mapillary_tools.exe video_process --import_path "c:\temp\proc" --video_import_path "c:\temp\proc" --user_name "trolleway" --advanced --geotag_source "gopro_videos" --geotag_source_path "c:\temp\raw" --interpolate_directions  --use_gps_start_time --video_sample_interval 1 --overwrite_EXIF_gps_tag
+```
